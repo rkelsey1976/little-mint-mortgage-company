@@ -54,6 +54,158 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#1f7d7d" />
+    <!-- JSON-LD: Organization + FinancialService + Person + FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "FinancialService"],
+          "@id": "https://little-mint-mortgage.netlify.app/#organization",
+          "name": "The Little Mint Mortgage Company",
+          "alternateName": "The Little Mint",
+          "url": "https://little-mint-mortgage.netlify.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://little-mint-mortgage.netlify.app/og-default.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://little-mint-mortgage.netlify.app/og-default.jpg",
+          "description": "Independent, fee-free mortgage advice from Sarah — a whole-of-market adviser serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK.",
+          "slogan": "Every home has a story.",
+          "email": "mailto:hello@thelittlemint.example.com",
+          "telephone": "+44-1225-000-000",
+          "areaServed": [
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "AdministrativeArea", "name": "England" },
+            { "@type": "AdministrativeArea", "name": "Wales" },
+            { "@type": "AdministrativeArea", "name": "Scotland" },
+            { "@type": "AdministrativeArea", "name": "Northern Ireland" }
+          ],
+          "serviceType": [
+            "Mortgage broker",
+            "Independent mortgage adviser",
+            "Whole-of-market mortgage advice"
+          ],
+          "knowsAbout": [
+            "First-time buyer mortgages",
+            "Remortgaging",
+            "Buy-to-let mortgages",
+            "Self-employed mortgages",
+            "Help to Buy",
+            "Shared Ownership",
+            "Equity release",
+            "Limited company BTL",
+            "Later-life lending"
+          ],
+          "priceRange": "$$",
+          "paymentAccepted": "No fee — paid by lender on completion",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer service",
+            "telephone": "+44-1225-000-000",
+            "email": "hello@thelittlemint.example.com",
+            "availableLanguage": "English",
+            "hoursAvailable": "Mo-Fr 09:00-18:00",
+            "areaServed": "GB"
+          },
+          "founder": { "@id": "https://little-mint-mortgage.netlify.app/#sarah" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://little-mint-mortgage.netlify.app/#sarah",
+          "name": "Sarah",
+          "jobTitle": "Founder & mortgage adviser",
+          "worksFor": { "@id": "https://little-mint-mortgage.netlify.app/#organization" },
+          "knowsAbout": [
+            "First-time buyer mortgages",
+            "Remortgaging",
+            "Buy-to-let mortgages",
+            "Self-employed mortgages",
+            "Help to Buy",
+            "Equity release"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://little-mint-mortgage.netlify.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much can I borrow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most lenders offer 4 to 4.5 times your annual income, though some go higher and self-employed borrowers are usually assessed on 2 to 3 years of accounts. We'll run a quick affordability check during your first chat and give you a realistic figure rather than a headline number that falls apart at application stage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you charge a fee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We get paid by the lender when your mortgage completes, not by you. There's no upfront fee, no application fee, and no charge if your circumstances change and you don't proceed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are you whole of market?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We search the entire market — every lender we'd consider for your circumstances — rather than a small panel. We're not tied to any one lender and we'd tell you if a deal isn't right."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does a remortgage take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 4 to 6 weeks from agreement in principle to completion. We'll start the process 3 to 4 months before your existing deal ends so we have plenty of time to find the right product without rushing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I get a buy-to-let mortgage through a limited company?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — limited company buy-to-let is one of our regular asks. We'll compare special limited-company BTL rates against the personal route, look at tax efficiency for your situation, and explain the trade-offs in plain English before recommending anything."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "I'm self-employed — can I still get a mortgage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Almost always yes. Sole traders, limited company directors, freelancers, contractors and umbrella workers all borrow — but lenders look at you differently. We work with lenders who specialise in non-PAYE income and know what paperwork maximises your borrowing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Help to Buy work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Help to Buy is a government equity loan that tops up your deposit, so you only need a 5% deposit from you and the government lends you up to 20% (40% in London) interest-free for five years. We'll explain the rules, repayment triggers, and whether it suits your situation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where are your clients based?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We help buyers across the whole of the UK — England, Wales, Scotland and Northern Ireland. Most of our conversations happen on the phone or video, and we can meet in person where it makes sense."
+              }
+            }
+          ]
+        }
+      ]
+    })} />
   </head>
   <body class={pageClass}>
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-mint-700 focus:text-white focus:px-4 focus:py-2 focus:rounded">
