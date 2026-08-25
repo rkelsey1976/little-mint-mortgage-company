@@ -73,8 +73,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
           "image": "https://little-mint-mortgage.netlify.app/og-default.jpg",
           "description": "Independent, fee-free mortgage advice from Sarah — a whole-of-market mortgage adviser in Fleetwood, serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK.",
           "slogan": "Every home has a story.",
-          "email": "mailto:hello@thelittlemint.example.com",
-          "telephone": "+44-1225-000-000",
+          "email": "mailto:sarah@thelittlemintmortgagecompany.com",
+          "telephone": "+44-7793-204066",
           "areaServed": [
             { "@type": "City", "name": "Fleetwood" },
             { "@type": "AdministrativeArea", "name": "Lancashire" },
@@ -113,11 +113,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Customer service",
-            "telephone": "+44-1225-000-000",
-            "email": "hello@thelittlemint.example.com",
+            "telephone": "+44-7793-204066",
+            "email": "sarah@thelittlemintmortgagecompany.com",
             "availableLanguage": "English",
             "hoursAvailable": "Mo-Fr 09:00-18:00",
             "areaServed": "GB"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Office 12, 13-15 Preston Street",
+            "addressLocality": "Fleetwood",
+            "addressRegion": "Lancashire",
+            "postalCode": "FY7 6JA",
+            "addressCountry": "GB"
           },
           "founder": { "@id": "https://little-mint-mortgage.netlify.app/#sarah" },
           "sameAs": [
@@ -127,8 +135,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
         {
           "@type": "Person",
           "@id": "https://little-mint-mortgage.netlify.app/#sarah",
-          "name": "Sarah",
-          "jobTitle": "Founder & mortgage adviser",
+          "name": "Sarah Mullender",
+          "givenName": "Sarah",
+          "familyName": "Mullender",
+          "jobTitle": "Founder & mortgage adviser (CeMAP)",
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Certificate in Mortgage Advice and Practice",
+            "credentialCategory": "certificate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Chartered Institute of Insurance / London Institute of Banking & Finance"
+            }
+          },
           "worksFor": { "@id": "https://little-mint-mortgage.netlify.app/#organization" },
           "knowsAbout": [
             "First-time buyer mortgages",
