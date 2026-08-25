@@ -60,7 +60,7 @@ const isActive = (href: string) => {
         class="md:hidden p-2 rounded-md text-ink-800 hover:bg-mint-50"
         aria-controls="nav-mobile"
         aria-expanded="false"
-        aria-label="Toggle menu"
+        aria-label="Open menu"
       >
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -69,42 +69,122 @@ const isActive = (href: string) => {
     </div>
   </div>
 
-  <div id="nav-mobile" hidden class="md:hidden border-t border-mint-100 bg-cream-50">
-    <nav aria-label="Primary mobile" class="px-5 py-3 flex flex-col gap-1">
-      {links.map((l) => (
-        <a
-          href={l.href}
-          aria-current={isActive(l.href) ? "page" : undefined}
-          class:list={[
-            "px-3 py-2.5 text-base font-medium rounded-md",
-            isActive(l.href)
-              ? "text-mint-800 bg-mint-50"
-              : "text-ink-700 hover:bg-mint-50/60",
-          ]}
-        >
-          {l.label}
+  <!-- Mobile menu: full-width overlay panel + dim backdrop -->
+  <div id="nav-mobile" hidden class="md:hidden fixed inset-0 z-50">
+    <div id="nav-mobile-backdrop" class="absolute inset-0 bg-ink-900/50 backdrop-blur-sm" aria-hidden="true"></div>
+
+    <div class="relative h-full w-full bg-cream-50 flex flex-col overflow-y-auto" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <!-- Top bar: logo + close -->
+      <div class="flex items-center justify-between px-5 sm:px-8 h-24 border-b border-mint-100">
+        <a href="/#home" class="flex items-center gap-4" aria-label="The Little Mint Mortgage Company — home">
+          <img src={logo.src} alt="" width="56" height="56" class="h-14 w-14 object-contain" />
+          <span class="flex flex-col leading-tight">
+            <span class="font-script text-2xl text-mint-700 leading-none">The Little Mint</span>
+            <span class="text-[0.65rem] tracking-[0.25em] uppercase text-ink-700/70 mt-1 font-semibold">Mortgage Company</span>
+          </span>
         </a>
-      ))}
-      <a href="/#contact" class="mt-2 inline-flex items-center justify-center bg-mint-700 text-white text-sm font-semibold px-5 py-3 rounded-full">
-        Get a chat
-      </a>
-    </nav>
+        <button
+          type="button"
+          id="nav-mobile-close"
+          class="p-2 -mr-2 rounded-md text-ink-800 hover:bg-mint-50"
+          aria-label="Close menu"
+        >
+          <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Contact strip: phone + email -->
+      <div class="px-5 sm:px-8 py-6 bg-gradient-to-br from-mint-50 to-cream-50 border-b border-mint-100">
+        <p class="text-xs uppercase tracking-[0.25em] text-mint-700 font-semibold">Call us</p>
+        <a href="tel:+441225000000" class="mt-1 block text-2xl font-bold text-ink-900">01225 000 000</a>
+        <p class="mt-1 text-sm text-ink-700/70">Mon–Fri, 9am–6pm. We still call back.</p>
+
+        <div class="mt-5 flex items-start gap-3">
+          <svg class="mt-0.5 h-5 w-5 flex-none text-mint-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M2.5 4.75A2.25 2.25 0 014.75 2.5h10.5A2.25 2.25 0 0117.5 4.75v10.5A2.25 2.25 0 0115.25 17.5H4.75A2.25 2.25 0 012.5 15.25V4.75z" />
+            <path d="M3.5 5.5l6.5 4.5 6.5-4.5" stroke="white" stroke-width="1.5" fill="none" />
+          </svg>
+          <a href="mailto:hello@thelittlemint.example.com" class="text-base font-medium text-ink-800 hover:text-mint-700 break-all">
+            hello@thelittlemint.example.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav links -->
+      <nav aria-label="Primary mobile" class="flex-1 px-5 sm:px-8 py-8 flex flex-col gap-2">
+        {links.map((l) => (
+          <a
+            href={l.href}
+            aria-current={isActive(l.href) ? "page" : undefined}
+            class:list={[
+              "flex items-center justify-between px-4 py-4 text-lg font-semibold rounded-2xl transition",
+              isActive(l.href)
+                ? "text-mint-800 bg-mint-50"
+                : "text-ink-800 hover:bg-mint-50/60",
+            ]}
+          >
+            {l.label}
+            <svg class="h-5 w-5 text-mint-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        ))}
+      </nav>
+
+      <!-- Bottom CTA + address -->
+      <div class="px-5 sm:px-8 pb-10 pt-6 border-t border-mint-100 space-y-5">
+        <a href="/#contact" class="flex items-center justify-center gap-2 bg-mint-700 hover:bg-mint-800 text-white text-base font-semibold px-7 py-4 rounded-full shadow-mint-glow transition w-full">
+          Get a chat
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <div class="text-center text-sm text-ink-700/70 leading-relaxed">
+          <p class="font-semibold text-ink-800">By appointment</p>
+          <p>The Little Mint Mortgage Company · Bath · BA1</p>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
 <script>
   const btn = document.getElementById("nav-toggle");
   const panel = document.getElementById("nav-mobile");
-  if (btn && panel) {
-    btn.addEventListener("click", () => {
-      const open = panel.hasAttribute("hidden");
-      if (open) {
-        panel.removeAttribute("hidden");
-        btn.setAttribute("aria-expanded", "true");
-      } else {
-        panel.setAttribute("hidden", "");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
+  const closeBtn = document.getElementById("nav-mobile-close");
+  const backdrop = document.getElementById("nav-mobile-backdrop");
+
+  const setOpen = (open: boolean) => {
+    if (!panel || !btn) return;
+    if (open) {
+      panel.removeAttribute("hidden");
+      btn.setAttribute("aria-expanded", "true");
+      btn.setAttribute("aria-label", "Close menu");
+      document.documentElement.classList.add("overflow-hidden");
+    } else {
+      panel.setAttribute("hidden", "");
+      btn.setAttribute("aria-expanded", "false");
+      btn.setAttribute("aria-label", "Open menu");
+      document.documentElement.classList.remove("overflow-hidden");
+    }
+  };
+
+  const isOpen = () => panel && !panel.hasAttribute("hidden");
+
+  btn?.addEventListener("click", () => setOpen(!isOpen()));
+  closeBtn?.addEventListener("click", () => setOpen(false));
+  backdrop?.addEventListener("click", () => setOpen(false));
+
+  // Close on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) setOpen(false);
+  });
+
+  // Close after navigating to an in-page anchor
+  panel?.querySelectorAll<HTMLAnchorElement>("a[href^='#'], a[href*='#']").forEach((a) => {
+    a.addEventListener("click", () => setOpen(false));
+  });
 </script>
