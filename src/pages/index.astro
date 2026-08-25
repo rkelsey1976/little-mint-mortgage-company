@@ -3,15 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import sarah from "../assets/sarah.webp";
 import logo from "../assets/logo-mark.webp";
 
-const services = [
-  { title: "First-time buyer mortgages", blurb: "From saving your deposit to handing over the keys — a friendly guide through the whole journey." },
-  { title: "Remortgaging", blurb: "Find a better deal, release equity, or change your rate. We'll search the whole market for you." },
-  { title: "Buy-to-let", blurb: "Whether it's your first rental or a growing portfolio, we handle individual and limited company BTL." },
-  { title: "Self-employed", blurb: "Sole traders, limited company directors, freelancers — we know how lenders see your accounts." },
-  { title: "Help to Buy & shared ownership", blurb: "Government schemes can be confusing. We translate the rules and find lenders who'll say yes." },
-  { title: "Equity release & later-life lending", blurb: "Options for over-55s, from lifetime mortgages to retirement interest-only. Discussed with care." },
-];
-
 const serviceDetails = [
   {
     title: "First-time buyer mortgages",
@@ -21,6 +12,16 @@ const serviceDetails = [
       "Help to Buy (Equity Loan), Shared Ownership, and First Homes",
       "Finding a lender that says yes to your circumstances",
       "Agreement in Principle, then full application through to completion",
+    ],
+  },
+  {
+    title: "Home mover & purchase mortgages",
+    summary: "Moving up, moving sideways, or buying your next home after a life change.",
+    points: [
+      "Porting your existing mortgage to avoid early repayment charges",
+      "Borrowing more to fund a bigger property",
+      "Coordinating chains, completion dates, and deposit timing",
+      "Switching to a better deal when you don't need to remortgage yet",
     ],
   },
   {
@@ -34,13 +35,33 @@ const serviceDetails = [
     ],
   },
   {
-    title: "Buy-to-let",
-    summary: "Single rentals or growing portfolios, individual or limited company.",
+    title: "Buy-to-let (single let)",
+    summary: "Your first rental, or a single property that needs specialist mortgage advice.",
     points: [
       "Stress-tested affordability based on rental income",
-      "Limited company BTL for tax efficiency",
-      "HMO and multi-unit block mortgages",
+      "Standard BTL rates across the whole of the market",
       "Holiday-let and serviced accommodation",
+      "Deciding whether to hold personally or via limited company",
+    ],
+  },
+  {
+    title: "Portfolio buy-to-let",
+    summary: "Multiple rental properties, one broker, one consistent strategy.",
+    points: [
+      "Lender portfolio limits (how many properties one lender will hold)",
+      "Top slicing income across the portfolio for affordability",
+      "Refinancing individual properties as the portfolio grows",
+      "Stress-testing against interest rate rises and void periods",
+    ],
+  },
+  {
+    title: "Limited company buy-to-let",
+    summary: "Holding rentals in a LtdCo for tax efficiency — with the lending to match.",
+    points: [
+      "Comparing LtdCo vs personal BTL rates",
+      "Transferring existing properties into the company",
+      "Directors' guarantees and security structures",
+      "Tax-aware structuring alongside your accountant",
     ],
   },
   {
@@ -71,6 +92,16 @@ const serviceDetails = [
       "Retirement Interest-Only mortgages",
       "Voluntary surrender of existing schemes",
       "Inheritance and family implications",
+    ],
+  },
+  {
+    title: "Protection insurance",
+    summary: "The cover that runs alongside your mortgage — so a worst-case event doesn't cost you your home.",
+    points: [
+      "Life cover — pays off the mortgage if the worst happens",
+      "Critical illness cover — lump sum on diagnosis of a specified condition",
+      "Income protection — replaces part of your income if you can't work",
+      "Buildings and contents insurance — the basics, often bundled",
     ],
   },
 ];
@@ -151,8 +182,8 @@ const values = [
     </div>
   </section>
 
-  <!-- ============ SERVICES PREVIEW ============ -->
-  <section id="services" class="section scroll-mt-20">
+  <!-- ============ SERVICES (heading + cards) ============ -->
+  <section id="services" class="section scroll-mt-20 bg-mint-50/50">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
       <div class="max-w-2xl">
         <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">What we do</p>
@@ -160,29 +191,13 @@ const values = [
           A mortgage for <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">every chapter.</span>
         </h2>
         <p class="mt-5 text-lg text-ink-700/80 leading-relaxed">
-          Whether it's your first flat, a forever home, a rental that pays for itself, or a remortgage while life changes shape — we search the whole market and explain the options in plain English.
+          Whether it's your first flat, a forever home, a single rental or a growing portfolio — we search the whole market and explain the options in plain English. Plus the protection cover that keeps the roof over your head if life doesn't go to plan.
         </p>
       </div>
 
-      <div class="mt-14 grid gap-px bg-mint-100 sm:grid-cols-2 lg:grid-cols-3 border border-mint-100 rounded-2xl overflow-hidden">
-        {services.map((s) => (
-          <article class="bg-cream-50 p-8 hover:bg-white transition group">
-            <div class="flex items-start gap-3">
-              <span class="mt-2 h-2 w-2 rounded-full bg-mint-500 group-hover:bg-mint-700 transition flex-none"></span>
-              <h3 class="text-xl font-semibold text-ink-900">{s.title}</h3>
-            </div>
-            <p class="mt-3 ml-5 text-ink-700/80 leading-relaxed">{s.blurb}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SERVICE DETAILS ============ -->
-  <section class="section bg-mint-50/50">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-10">
-      {serviceDetails.map((s, i) => (
-        <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start p-8 sm:p-10 rounded-3xl border border-mint-100 bg-white">
+      <div class="mt-14 space-y-10">
+        {serviceDetails.map((s, i) => (
+          <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start p-8 sm:p-10 rounded-3xl border border-mint-100 bg-white">
           <div class="lg:col-span-4">
             <div class="flex items-center gap-3">
               <span class="flex h-10 w-10 items-center justify-center rounded-full bg-mint-100 text-mint-700 font-bold text-sm">
@@ -204,6 +219,7 @@ const values = [
           </ul>
         </article>
       ))}
+      </div>
     </div>
   </section>
 
