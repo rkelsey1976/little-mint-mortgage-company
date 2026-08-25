@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import sarah from "../assets/sarah.webp";
-import sarahThumb from "../assets/sarah-thumb.webp";
+import logo from "../assets/logo-mark.webp";
 
 const services = [
   { title: "First-time buyer mortgages", blurb: "From saving your deposit to handing over the keys — a friendly guide through the whole journey." },
@@ -132,8 +132,6 @@ const values = [
           <div class="relative rounded-3xl overflow-hidden shadow-mint-glow ring-1 ring-mint-200">
             <img
               src={sarah.src}
-              srcset={`${sarahThumb.src} 80w, ${sarah.src} 800w`}
-              sizes="(min-width: 1024px) 384px, 80vw"
               alt="Sarah, founder of The Little Mint Mortgage Company"
               class="w-full h-auto object-cover aspect-[4/5]"
               width="640"
@@ -235,35 +233,21 @@ const values = [
 
   <!-- ============ ABOUT ============ -->
   <section id="about" class="section scroll-mt-20">
-    <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">About us</p>
-          <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-[1.05]">
-            A small team.<br />
-            <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">A big heart.</span>
-          </h2>
-          <p class="mt-6 text-lg text-ink-700/80 max-w-2xl leading-relaxed">
-            The Little Mint Mortgage Company started with a simple idea: getting a mortgage should feel like a beginning, not a chore. We started in Bath, and we've stayed small on purpose — small enough to know every client by name.
-          </p>
-          <p class="mt-4 text-lg text-ink-700/80 max-w-2xl leading-relaxed">
-            We search the whole of the market, recommend what we'd recommend to a friend, and stay on the line until the keys are in your hand.
-          </p>
-        </div>
-        <div class="lg:col-span-5">
-          <div class="relative">
-            <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-mint-200/40 to-transparent blur-2xl"></div>
-            <div class="relative rounded-3xl overflow-hidden bg-white border border-mint-100">
-              <img src={sarah.src} alt="Sarah, founder of The Little Mint Mortgage Company" class="w-full h-auto object-cover aspect-[4/5]" width="640" height="800" loading="lazy" decoding="async" />
-              <div class="p-8 text-center">
-                <p class="font-semibold text-ink-900">Sarah</p>
-                <p class="text-xs text-mint-700 font-medium uppercase tracking-[0.15em] mt-1">Founder &amp; mortgage adviser</p>
-                <p class="mt-4 font-script text-3xl text-mint-700">Every home has a story.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="mx-auto max-w-3xl px-5 sm:px-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">About us</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-[1.05]">
+        A small team.<br />
+        <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">A big heart.</span>
+      </h2>
+      <p class="mt-6 text-lg text-ink-700/80 leading-relaxed">
+        The Little Mint Mortgage Company started with a simple idea: getting a mortgage should feel like a beginning, not a chore. We started in Bath, and we've stayed small on purpose — small enough to know every client by name.
+      </p>
+      <p class="mt-4 text-lg text-ink-700/80 leading-relaxed">
+        We search the whole of the market, recommend what we'd recommend to a friend, and stay on the line until the keys are in your hand.
+      </p>
+      <p class="mt-6 text-lg text-ink-800 font-medium leading-relaxed">
+        When you call, you speak to Sarah. She'll have read your file, she won't put you on hold, and she'll remember your name next time.
+      </p>
     </div>
   </section>
 
@@ -295,45 +279,36 @@ const values = [
 
   <!-- ============ STORY ============ -->
   <section class="section wash-mint">
-    <div class="mx-auto max-w-3xl px-5 sm:px-8">
-      <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">Our story</p>
-      <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
-        Started in a kitchen, <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">still small on purpose.</span>
-      </h2>
-      <div class="mt-8 space-y-5 text-lg text-ink-700/85 leading-relaxed">
-        <p>The Little Mint began the way most small businesses begin — one person, a laptop on a kitchen table, and a list of friends who all needed a mortgage at roughly the same time. Word spread. More friends-of-friends appeared. The list got longer.</p>
-        <p>Years on, we're still small on purpose. We've resisted the temptation to scale into a call centre because the thing our clients tell us they value most is the thing we're worst at doing at scale: remembering their story.</p>
-        <p>We're based in Bath, we help buyers across the whole of the UK, and we're authorised and regulated by the Financial Conduct Authority. We get paid by the lender, never by you, and we'll always tell you when <em>not</em> to borrow.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TEAM ============ -->
-  <section class="section">
     <div class="mx-auto max-w-7xl px-5 sm:px-8">
-      <div class="max-w-2xl">
-        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">The team</p>
-        <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
-          The person you'll <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">actually meet.</span>
-        </h2>
-        <p class="mt-5 text-lg text-ink-700/80 leading-relaxed">
-          When you call, you speak to Sarah. She'll have read your file, she won't put you on hold, and she'll remember your name next time.
-        </p>
-      </div>
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-7">
+          <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">Our story</p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
+            Started in a kitchen, <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">still small on purpose.</span>
+          </h2>
+          <div class="mt-8 space-y-5 text-lg text-ink-700/85 leading-relaxed max-w-2xl">
+            <p>The Little Mint began the way most small businesses begin — one person, a laptop on a kitchen table, and a list of friends who all needed a mortgage at roughly the same time. Word spread. More friends-of-friends appeared. The list got longer.</p>
+            <p>Years on, we're still small on purpose. We've resisted the temptation to scale into a call centre because the thing our clients tell us they value most is the thing we're worst at doing at scale: remembering their story.</p>
+            <p>We're based in Bath, we help buyers across the whole of the UK, and we're authorised and regulated by the Financial Conduct Authority. We get paid by the lender, never by you, and we'll always tell you when <em>not</em> to borrow.</p>
+          </div>
+        </div>
 
-      <div class="mt-14 max-w-md">
-        <article class="rounded-2xl bg-white border border-mint-100 p-8 text-center">
-          <img src={sarahThumb.src} alt="Sarah, founder of The Little Mint Mortgage Company" class="mx-auto h-40 w-40 rounded-full object-cover ring-2 ring-mint-200" width="160" height="160" loading="lazy" decoding="async" />
-          <p class="mt-6 font-semibold text-ink-900 text-lg">Sarah</p>
-          <p class="text-sm text-mint-700 font-medium">Founder &amp; mortgage adviser</p>
-          <p class="mt-3 text-sm text-ink-700/70 leading-relaxed">
-            Started The Little Mint because she wanted to do mortgages the way her friends deserved. CeMAP qualified, whole-of-market, and a real human on the phone.
-          </p>
-          <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-mint-700 hover:text-mint-800">
-            Say hello
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg>
-          </a>
-        </article>
+        <div class="lg:col-span-5 flex items-center justify-center lg:justify-end">
+          <div class="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
+            <div class="absolute inset-4 rounded-[2.5rem] bg-gradient-to-br from-mint-200/60 via-mint-100/30 to-transparent blur-2xl"></div>
+            <div class="relative rounded-[2.5rem] bg-white p-8 ring-1 ring-mint-200 shadow-mint-glow">
+              <img
+                src={logo.src}
+                alt="The Little Mint Mortgage Company logo"
+                width="384"
+                height="384"
+                class="relative h-auto w-full"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
