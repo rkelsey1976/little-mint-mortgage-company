@@ -1,0 +1,51 @@
+---
+import logo from "../assets/logo-mark.png";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="wash-deep mt-24">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 grid gap-12 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-3">
+        <img src={logo.src} alt="" width="56" height="56" class="h-14 w-14" />
+        <div>
+          <p class="font-script text-3xl text-mint-300 leading-none">The Little Mint</p>
+          <p class="text-[0.7rem] tracking-[0.25em] uppercase text-cream-100/70 mt-1">Mortgage Company</p>
+        </div>
+      </div>
+      <p class="mt-5 max-w-md text-cream-100/80 leading-relaxed">
+        Independent, whole-of-market mortgage advice from people who actually pick up the phone. Based in Bath, helping buyers across England, Wales, Scotland and Northern Ireland.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-[0.2em] text-mint-300 font-semibold">Visit</h3>
+      <ul class="mt-4 space-y-2 text-sm text-cream-100/85">
+        <li><a href="/#home" class="hover:text-white">Home</a></li>
+        <li><a href="/#about" class="hover:text-white">About</a></li>
+        <li><a href="/#services" class="hover:text-white">Services</a></li>
+        <li><a href="/#contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-[0.2em] text-mint-300 font-semibold">Get in touch</h3>
+      <ul class="mt-4 space-y-2 text-sm text-cream-100/85">
+        <li><a href="mailto:hello@thelittlemint.example.com" class="hover:text-white">hello@thelittlemint.example.com</a></li>
+        <li><a href="tel:+441225000000" class="hover:text-white">01225 000 000</a></li>
+        <li class="text-cream-100/60">Bath, BA1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-cream-100/60">
+      <p>© {year} The Little Mint Mortgage Company. All rights reserved.</p>
+      <p>
+        Your home may be repossessed if you do not keep up repayments on a mortgage.
+        Most buy-to-let mortgages are not regulated by the Financial Conduct Authority.
+      </p>
+    </div>
+  </div>
+</footer>

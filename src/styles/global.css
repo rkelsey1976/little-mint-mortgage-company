@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* The Little Mint Mortgage Company — theme derived from the logo.
+   Primary: teal/mint (script + brand)
+   Accent: deep teal (mortgage company text + dark sections)
+   Soft: pale mint wash (panels, hover states)
+   Neutrals: warm off-black + cream (text, surfaces) — avoids sterile white */
+@theme {
+  --color-mint-50:  #ecfdf5;
+  --color-mint-100: #d1fae5;
+  --color-mint-200: #a7f3d0;
+  --color-mint-300: #6ee7b7;
+  --color-mint-400: #4ec9a5;
+  --color-mint-500: #2ea890;
+  --color-mint-600: #1f8a78;
+  --color-mint-700: #1a6f61;
+  --color-mint-800: #165a4f;
+  --color-mint-900: #114a42;
+
+  --color-teal-deep-500: #2e9999;
+  --color-teal-deep-600: #1f7d7d;
+  --color-teal-deep-700: #166363;
+
+  --color-lime-accent-400: #9acd4a;
+  --color-lime-accent-500: #82b73a;
+
+  --color-cream-50:  #fbfaf6;
+  --color-cream-100: #f6f3ea;
+  --color-cream-200: #ede7d6;
+
+  --color-ink-700: #1a2926;
+  --color-ink-800: #11201d;
+  --color-ink-900: #0a1614;
+
+  --font-display: "Caveat", "Brush Script MT", "Lucida Handwriting", cursive;
+  --font-sans: "Inter", "Helvetica Neue", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --shadow-mint-glow: 0 10px 40px -10px rgba(46, 168, 144, 0.35);
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-cream-50);
+  color: var(--color-ink-800);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+/* Accent script heading — use for "The Little Mint" wordmarks and tagline flourishes */
+.font-script {
+  font-family: var(--font-display);
+  letter-spacing: 0.005em;
+  line-height: 0.95;
+}
+
+/* Watercolor-style accent block — soft mint wash that mirrors the
+   logo's splatter aesthetic without being literally splatter-y. */
+.wash-mint {
+  background: radial-gradient(ellipse 80% 60% at 20% 30%, rgba(110, 231, 183, 0.18), transparent 60%),
+              radial-gradient(ellipse 70% 50% at 80% 70%, rgba(46, 168, 144, 0.14), transparent 65%),
+              linear-gradient(180deg, var(--color-mint-50), var(--color-cream-50));
+}
+
+.wash-deep {
+  background: linear-gradient(180deg, var(--color-ink-900) 0%, var(--color-ink-800) 100%);
+  color: var(--color-cream-50);
+}
+
+/* Underline-on-hover link that doesn't shout */
+.link-mint {
+  color: var(--color-mint-700);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.15s ease;
+}
+.link-mint:hover { color: var(--color-mint-900); }
+
+/* Section spacing rhythm */
+.section { padding-block: 5rem; }
+@media (min-width: 768px) { .section { padding-block: 7rem; } }

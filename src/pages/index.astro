@@ -1,0 +1,428 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import sarah from "../assets/sarah.jpg";
+
+const services = [
+  { title: "First-time buyer mortgages", blurb: "From saving your deposit to handing over the keys — a friendly guide through the whole journey." },
+  { title: "Remortgaging", blurb: "Find a better deal, release equity, or change your rate. We'll search the whole market for you." },
+  { title: "Buy-to-let", blurb: "Whether it's your first rental or a growing portfolio, we handle individual and limited company BTL." },
+  { title: "Self-employed", blurb: "Sole traders, limited company directors, freelancers — we know how lenders see your accounts." },
+  { title: "Help to Buy & shared ownership", blurb: "Government schemes can be confusing. We translate the rules and find lenders who'll say yes." },
+  { title: "Equity release & later-life lending", blurb: "Options for over-55s, from lifetime mortgages to retirement interest-only. Discussed with care." },
+];
+
+const serviceDetails = [
+  {
+    title: "First-time buyer mortgages",
+    summary: "Buying your first home is exciting, and a little terrifying. We hold the map.",
+    points: [
+      "Saving the deposit and how much you can really borrow",
+      "Help to Buy (Equity Loan), Shared Ownership, and First Homes",
+      "Finding a lender that says yes to your circumstances",
+      "Agreement in Principle, then full application through to completion",
+    ],
+  },
+  {
+    title: "Remortgaging",
+    summary: "Move off your lender's standard variable rate, raise capital, or change the term.",
+    points: [
+      "Switching to a better deal at the end of a fixed rate",
+      "Releasing equity for home improvements or life events",
+      "Changing from interest-only to repayment (or vice versa)",
+      "Product transfer vs full remortgage — when each makes sense",
+    ],
+  },
+  {
+    title: "Buy-to-let",
+    summary: "Single rentals or growing portfolios, individual or limited company.",
+    points: [
+      "Stress-tested affordability based on rental income",
+      "Limited company BTL for tax efficiency",
+      "HMO and multi-unit block mortgages",
+      "Holiday-let and serviced accommodation",
+    ],
+  },
+  {
+    title: "Self-employed & contractors",
+    summary: "Sole traders, limited company directors, freelancers, and umbrella workers.",
+    points: [
+      "Using SA302s, company accounts, or day-rate contracts",
+      "Dealing with lenders who specialise in non-PAYE income",
+      "Maximising borrowing with the right accountant paperwork",
+      "Bridging loans if you need speed",
+    ],
+  },
+  {
+    title: "Help to Buy & Shared Ownership",
+    summary: "Government-backed schemes that can put a first home within reach — explained.",
+    points: [
+      "Help to Buy Equity Loan (where still available)",
+      "Shared Ownership staircasing and resale",
+      "First Homes and other local schemes",
+      "Combining schemes with standard mortgages",
+    ],
+  },
+  {
+    title: "Equity release & later-life lending",
+    summary: "Options for the over-55s, discussed carefully and only where appropriate.",
+    points: [
+      "Lifetime mortgages (roll-up interest)",
+      "Retirement Interest-Only mortgages",
+      "Voluntary surrender of existing schemes",
+      "Inheritance and family implications",
+    ],
+  },
+];
+
+const values = [
+  { title: "Independent", body: "We're whole-of-market, not tied to any one lender. If a deal isn't right, we'll tell you — and we'll tell you why." },
+  { title: "Plain English", body: "Mortgages come with their own language. We translate, we don't lecture. You'll leave every conversation knowing exactly where you stand." },
+  { title: "Properly human", body: "You'll get a real person who picks up the phone, knows your file, and remembers why you called. No call centres, no scripts." },
+  { title: "Lifelong", body: "Most of our clients come back for their next move. We measure success in second and third mortgages, not first." },
+];
+---
+
+<BaseLayout
+  title="The Little Mint Mortgage Company"
+  description="Independent, friendly mortgage advice in Bath and across the UK. First-time buyers, remortgages, buy-to-let and more. Every home has a story — this could be yours."
+>
+  <!-- ============ HERO ============ -->
+  <section id="home" class="relative overflow-hidden wash-mint">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 pt-16 pb-24 md:pt-24 md:pb-32 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">Independent mortgage advice</p>
+        <h1 class="mt-4 font-sans text-5xl sm:text-6xl lg:text-7xl font-bold text-ink-900 leading-[1.05]">
+          Mortgages, <br class="hidden sm:inline" />
+          <span class="font-script text-mint-700 font-normal text-6xl sm:text-7xl lg:text-8xl">made human.</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-ink-700/80 max-w-xl leading-relaxed">
+          Independent advice on first homes, family moves, rentals, and remortgages — from people who pick up the phone, search the whole market, and explain things in plain English.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-mint-700 hover:bg-mint-800 text-white text-base font-semibold px-7 py-3.5 rounded-full shadow-mint-glow transition">
+            Book a free chat
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg>
+          </a>
+          <a href="#services" class="inline-flex items-center gap-2 bg-white/70 hover:bg-white text-ink-800 text-base font-semibold px-7 py-3.5 rounded-full border border-mint-200 transition">
+            See what we do
+          </a>
+        </div>
+        <ul class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-800 font-medium">
+          <li class="inline-flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-mint-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+            Whole of market
+          </li>
+          <li class="inline-flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-mint-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+            FCA regulated
+          </li>
+          <li class="inline-flex items-center gap-1.5">
+            <svg class="h-4 w-4 text-mint-700" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+            No upfront fees
+          </li>
+        </ul>
+        <p class="mt-6 text-[0.7rem] text-ink-700/55 max-w-md leading-snug">
+          Your home may be repossessed if you do not keep up repayments on a mortgage.
+        </p>
+      </div>
+
+      <div class="lg:col-span-5 relative">
+        <div class="relative max-w-sm mx-auto">
+          <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-mint-200/60 via-mint-100/30 to-transparent blur-2xl"></div>
+          <div class="relative rounded-3xl overflow-hidden shadow-mint-glow ring-1 ring-mint-200">
+            <img src={sarah.src} alt="Sarah, founder of The Little Mint Mortgage Company" class="w-full h-auto object-cover aspect-[4/5]" width="640" height="800" />
+            <div class="absolute bottom-4 left-4 right-4 rounded-2xl bg-cream-50/95 backdrop-blur px-5 py-4 shadow-md">
+              <p class="text-base font-semibold text-ink-900">Sarah</p>
+              <p class="text-xs text-mint-700 font-medium uppercase tracking-[0.15em]">Founder &amp; mortgage adviser</p>
+            </div>
+          </div>
+          <p class="mt-6 text-center font-script text-3xl text-mint-700">Every home has a story.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES PREVIEW ============ -->
+  <section id="services" class="section scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">What we do</p>
+        <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
+          A mortgage for <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">every chapter.</span>
+        </h2>
+        <p class="mt-5 text-lg text-ink-700/80 leading-relaxed">
+          Whether it's your first flat, a forever home, a rental that pays for itself, or a remortgage while life changes shape — we search the whole market and explain the options in plain English.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-px bg-mint-100 sm:grid-cols-2 lg:grid-cols-3 border border-mint-100 rounded-2xl overflow-hidden">
+        {services.map((s) => (
+          <article class="bg-cream-50 p-8 hover:bg-white transition group">
+            <div class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 rounded-full bg-mint-500 group-hover:bg-mint-700 transition flex-none"></span>
+              <h3 class="text-xl font-semibold text-ink-900">{s.title}</h3>
+            </div>
+            <p class="mt-3 ml-5 text-ink-700/80 leading-relaxed">{s.blurb}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE DETAILS ============ -->
+  <section class="section bg-mint-50/50">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 space-y-10">
+      {serviceDetails.map((s, i) => (
+        <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start p-8 sm:p-10 rounded-3xl border border-mint-100 bg-white">
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-full bg-mint-100 text-mint-700 font-bold text-sm">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-semibold text-ink-900">{s.title}</h3>
+            </div>
+            <p class="mt-4 text-ink-700/80 leading-relaxed">{s.summary}</p>
+          </div>
+          <ul class="lg:col-span-8 space-y-3">
+            {s.points.map((p) => (
+              <li class="flex items-start gap-3 text-ink-800/90 leading-relaxed">
+                <svg class="mt-1 h-5 w-5 flex-none text-mint-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                </svg>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ PROCESS (dark band) ============ -->
+  <section class="section wash-deep">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-mint-300 font-semibold">How it works</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-cream-50 leading-tight max-w-3xl">
+        A simple, four-step <span class="font-script text-mint-300 font-normal text-5xl sm:text-6xl">process.</span>
+      </h2>
+      <ol class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+        {[
+          { n: "01", t: "Quick chat", d: "Tell us where you are and where you'd like to be. 20 minutes, no obligation." },
+          { n: "02", t: "Search", d: "We run the numbers across every relevant lender and come back with a shortlist — usually 2 or 3." },
+          { n: "03", t: "Recommendation", d: "We explain the trade-offs in plain English, recommend what we'd pick, and only move when you're ready." },
+          { n: "04", t: "To keys", d: "We handle the paperwork and chase the lender so you don't have to." },
+        ].map((s) => (
+          <li class="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col h-full">
+            <p class="font-script text-3xl text-mint-300">{s.n}</p>
+            <p class="mt-2 text-lg font-semibold text-cream-50">{s.t}</p>
+            <p class="mt-2 text-sm text-cream-100/75 leading-relaxed">{s.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">About us</p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-[1.05]">
+            A small team.<br />
+            <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">A big heart.</span>
+          </h2>
+          <p class="mt-6 text-lg text-ink-700/80 max-w-2xl leading-relaxed">
+            The Little Mint Mortgage Company started with a simple idea: getting a mortgage should feel like a beginning, not a chore. We started in Bath, and we've stayed small on purpose — small enough to know every client by name.
+          </p>
+          <p class="mt-4 text-lg text-ink-700/80 max-w-2xl leading-relaxed">
+            We search the whole of the market, recommend what we'd recommend to a friend, and stay on the line until the keys are in your hand.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-mint-200/40 to-transparent blur-2xl"></div>
+            <div class="relative rounded-3xl overflow-hidden bg-white border border-mint-100">
+              <img src={sarah.src} alt="Sarah, founder of The Little Mint Mortgage Company" class="w-full h-auto object-cover aspect-[4/5]" width="640" height="800" />
+              <div class="p-8 text-center">
+                <p class="font-semibold text-ink-900">Sarah</p>
+                <p class="text-xs text-mint-700 font-medium uppercase tracking-[0.15em] mt-1">Founder &amp; mortgage adviser</p>
+                <p class="mt-4 font-script text-3xl text-mint-700">Every home has a story.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="section bg-mint-50/50">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">What we believe</p>
+        <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
+          Four things we won't <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">compromise on.</span>
+        </h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2">
+        {values.map((v, i) => (
+          <article class="relative rounded-2xl border border-mint-100 bg-white p-8 hover:shadow-mint-glow transition">
+            <div class="flex items-center gap-3">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-mint-100 text-mint-700 font-bold">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 class="text-2xl font-semibold text-ink-900">{v.title}</h3>
+            </div>
+            <p class="mt-4 text-ink-700/80 leading-relaxed">{v.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="section wash-mint">
+    <div class="mx-auto max-w-3xl px-5 sm:px-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">Our story</p>
+      <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
+        Started in a kitchen, <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">still small on purpose.</span>
+      </h2>
+      <div class="mt-8 space-y-5 text-lg text-ink-700/85 leading-relaxed">
+        <p>The Little Mint began the way most small businesses begin — one person, a laptop on a kitchen table, and a list of friends who all needed a mortgage at roughly the same time. Word spread. More friends-of-friends appeared. The list got longer.</p>
+        <p>Years on, we're still small on purpose. We've resisted the temptation to scale into a call centre because the thing our clients tell us they value most is the thing we're worst at doing at scale: remembering their story.</p>
+        <p>We're based in Bath, we help buyers across the whole of the UK, and we're authorised and regulated by the Financial Conduct Authority. We get paid by the lender, never by you, and we'll always tell you when <em>not</em> to borrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="section">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">The team</p>
+        <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-tight">
+          The person you'll <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">actually meet.</span>
+        </h2>
+        <p class="mt-5 text-lg text-ink-700/80 leading-relaxed">
+          When you call, you speak to Sarah. She'll have read your file, she won't put you on hold, and she'll remember your name next time.
+        </p>
+      </div>
+
+      <div class="mt-14 max-w-md">
+        <article class="rounded-2xl bg-white border border-mint-100 p-8 text-center">
+          <img src={sarah.src} alt="Sarah, founder of The Little Mint Mortgage Company" class="mx-auto h-40 w-40 rounded-full object-cover ring-2 ring-mint-200" width="160" height="160" />
+          <p class="mt-6 font-semibold text-ink-900 text-lg">Sarah</p>
+          <p class="text-sm text-mint-700 font-medium">Founder &amp; mortgage adviser</p>
+          <p class="mt-3 text-sm text-ink-700/70 leading-relaxed">
+            Started The Little Mint because she wanted to do mortgages the way her friends deserved. CeMAP qualified, whole-of-market, and a real human on the phone.
+          </p>
+          <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-mint-700 hover:text-mint-800">
+            Say hello
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" /></svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section bg-mint-50/50 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="max-w-3xl mb-14">
+        <p class="text-xs uppercase tracking-[0.3em] text-mint-700 font-semibold">Get in touch</p>
+        <h2 class="mt-3 text-4xl sm:text-5xl font-bold text-ink-900 leading-[1.05]">
+          Let's have a <span class="font-script text-mint-700 font-normal text-5xl sm:text-6xl">no-pressure chat.</span>
+        </h2>
+        <p class="mt-5 text-lg text-ink-700/80 leading-relaxed">
+          Tell us a little about what you're looking for and we'll get back within one working day. Or pick up the phone — we still prefer it.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12">
+        <!-- FORM -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl border border-mint-100 bg-white p-8 sm:p-10">
+            <h3 class="text-2xl font-semibold text-ink-900">Send us a message</h3>
+            <p class="mt-1 text-sm text-ink-700/70">We'll reply within one working day.</p>
+
+            <form class="mt-8 space-y-6" action="#" method="POST" novalidate>
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-ink-800">Your name</label>
+                  <input id="name" name="name" type="text" required class="mt-2 block w-full rounded-lg border border-mint-200 bg-cream-50 px-4 py-3 text-ink-900 focus:border-mint-600 focus:ring-2 focus:ring-mint-300 focus:outline-none" />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-ink-800">Phone (optional)</label>
+                  <input id="phone" name="phone" type="tel" class="mt-2 block w-full rounded-lg border border-mint-200 bg-cream-50 px-4 py-3 text-ink-900 focus:border-mint-600 focus:ring-2 focus:ring-mint-300 focus:outline-none" />
+                </div>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-ink-800">Email</label>
+                <input id="email" name="email" type="email" required class="mt-2 block w-full rounded-lg border border-mint-200 bg-cream-50 px-4 py-3 text-ink-900 focus:border-mint-600 focus:ring-2 focus:ring-mint-300 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="type" class="block text-sm font-medium text-ink-800">What can we help with?</label>
+                <select id="type" name="type" class="mt-2 block w-full rounded-lg border border-mint-200 bg-cream-50 px-4 py-3 text-ink-900 focus:border-mint-600 focus:ring-2 focus:ring-mint-300 focus:outline-none">
+                  <option>First-time buyer mortgage</option>
+                  <option>Remortgage</option>
+                  <option>Buy-to-let</option>
+                  <option>Self-employed / contractor</option>
+                  <option>Help to Buy or Shared Ownership</option>
+                  <option>Equity release / later-life</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-ink-800">Tell us a little about your situation</label>
+                <textarea id="message" name="message" rows="5" class="mt-2 block w-full rounded-lg border border-mint-200 bg-cream-50 px-4 py-3 text-ink-900 focus:border-mint-600 focus:ring-2 focus:ring-mint-300 focus:outline-none"></textarea>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input id="consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-mint-300 text-mint-700 focus:ring-mint-500" />
+                <label for="consent" class="text-sm text-ink-700/80">
+                  I'm happy for The Little Mint to contact me about my enquiry. I understand my data will be handled in line with the <a href="#" class="link-mint">privacy policy</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="inline-flex items-center gap-2 bg-mint-700 hover:bg-mint-800 text-white text-base font-semibold px-7 py-3.5 rounded-full shadow-mint-glow transition">
+                Send message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ASIDE -->
+        <aside class="lg:col-span-5 space-y-6">
+          <div class="rounded-3xl bg-gradient-to-br from-mint-100 to-cream-50 p-8 border border-mint-100">
+            <p class="text-xs uppercase tracking-[0.25em] text-mint-700 font-semibold">Call us</p>
+            <a href="tel:+441225000000" class="mt-2 block text-3xl font-bold text-ink-900 hover:text-mint-700">01225 000 000</a>
+            <p class="mt-2 text-sm text-ink-700/75">Mon–Fri, 9am–6pm. Voicemail outside hours — we still call back.</p>
+          </div>
+
+          <div class="rounded-3xl bg-white border border-mint-100 p-8">
+            <p class="text-xs uppercase tracking-[0.25em] text-mint-700 font-semibold">Email</p>
+            <a href="mailto:hello@thelittlemint.example.com" class="mt-2 block text-xl font-semibold text-ink-900 hover:text-mint-700">hello@thelittlemint.example.com</a>
+            <p class="mt-2 text-sm text-ink-700/75">For everything else — press, partnerships, complaints.</p>
+          </div>
+
+          <div class="rounded-3xl wash-deep p-8">
+            <p class="text-xs uppercase tracking-[0.25em] text-mint-300 font-semibold">Visit</p>
+            <p class="mt-2 text-cream-50 text-lg font-semibold">By appointment</p>
+            <p class="mt-1 text-cream-100/80 leading-relaxed">The Little Mint Mortgage Company<br />Bath · BA1</p>
+            <p class="mt-3 font-script text-2xl text-mint-300">"We'll put the kettle on."</p>
+          </div>
+
+          <div class="rounded-3xl border border-mint-200 bg-mint-50/40 p-6 text-xs text-ink-700/75 leading-relaxed">
+            <p class="font-semibold text-ink-800">A small note.</p>
+            <p class="mt-1">The Little Mint Mortgage Company is authorised and regulated by the Financial Conduct Authority. Your home may be repossessed if you do not keep up repayments on a mortgage. Most buy-to-let mortgages are not regulated by the FCA.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
