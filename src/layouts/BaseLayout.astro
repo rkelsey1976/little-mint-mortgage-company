@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title = "The Little Mint Mortgage Company",
-  description = "Independent, fee-free mortgage advice from Sarah — a whole-of-market adviser serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK. Every home has a story.",
+  description = "Independent, fee-free mortgage advice from Sarah — a whole-of-market mortgage adviser in Fleetwood, serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK. Every home has a story.",
   pageClass = "",
 } = Astro.props;
 
@@ -71,11 +71,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
             "height": 630
           },
           "image": "https://little-mint-mortgage.netlify.app/og-default.jpg",
-          "description": "Independent, fee-free mortgage advice from Sarah — a whole-of-market adviser serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK.",
+          "description": "Independent, fee-free mortgage advice from Sarah — a whole-of-market mortgage adviser in Fleetwood, serving first-time buyers, remortgages, buy-to-let, self-employed, Help to Buy and equity release across the UK.",
           "slogan": "Every home has a story.",
           "email": "mailto:hello@thelittlemint.example.com",
           "telephone": "+44-1225-000-000",
           "areaServed": [
+            { "@type": "City", "name": "Fleetwood" },
+            { "@type": "AdministrativeArea", "name": "Lancashire" },
             { "@type": "Country", "name": "United Kingdom" },
             { "@type": "AdministrativeArea", "name": "England" },
             { "@type": "AdministrativeArea", "name": "Wales" },
@@ -117,7 +119,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://thelittlemi
             "hoursAvailable": "Mo-Fr 09:00-18:00",
             "areaServed": "GB"
           },
-          "founder": { "@id": "https://little-mint-mortgage.netlify.app/#sarah" }
+          "founder": { "@id": "https://little-mint-mortgage.netlify.app/#sarah" },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61591207851140"
+          ]
         },
         {
           "@type": "Person",
