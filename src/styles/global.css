@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "@fontsource/caveat/500.css";
+@import "@fontsource/caveat/600.css";
+@import "@fontsource/caveat/700.css";
 @import "tailwindcss";
+
+/* Inter body text intentionally uses the system stack — no web font.
+   This eliminates the FOIT/FOUT layout shift entirely.
+   Caveat is still self-hosted for the script accents. */
 
 /* The Little Mint Mortgage Company — theme derived from the logo.
    Primary: teal/mint (script + brand)
@@ -34,7 +40,7 @@
   --color-ink-900: #0a1614;
 
   --font-display: "Caveat", "Brush Script MT", "Lucida Handwriting", cursive;
-  --font-sans: "Inter", "Helvetica Neue", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Inter", system-ui, sans-serif;
 
   --shadow-mint-glow: 0 10px 40px -10px rgba(46, 168, 144, 0.35);
 }
